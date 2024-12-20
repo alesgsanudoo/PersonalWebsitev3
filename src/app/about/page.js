@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart, Languages, Code, Camera } from 'lucide-react'
+import { Heart, Languages, Code, Camera, ChevronLeft, ChevronRight } from 'lucide-react'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -16,7 +16,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { cn } from "@/lib/utils"
 import React from "react";
 
-export default function Home() {
+export default function AboutPage() {
     const {
         state,
         isMobile,
@@ -34,9 +34,7 @@ export default function Home() {
                         <TooltipProvider>
                             <Tooltip>
                                 <TooltipTrigger asChild>
-                            <span>
-                                <SidebarTrigger className="-ml-1 dark:text-amber-500 text-blue-500"/>
-                            </span>
+                                    <SidebarTrigger className="-ml-1 dark:text-amber-500 text-blue-500"/>
                                 </TooltipTrigger>
                                 <TooltipContent side="right"
                                                 className={cn("light:bg-black text-primary-foreground", "border-primary", "shadow-md"
@@ -168,6 +166,26 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
+                </div>
+                <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
+                    <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
+                        <a href="/"
+                           className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+                            <ChevronLeft className="w-4 h-4"/>
+                            <div>
+                                <div className="text-sm font-medium">Previous Page</div>
+                                <div className="text-xl dark:text-white text-black">Explore</div>
+                            </div>
+                        </a>
+                        <a href="/experience"
+                           className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
+                            <div>
+                                <div className="text-sm font-medium">Next Page</div>
+                                <div className="text-xl dark:text-white text-black">Experience</div>
+                            </div>
+                            <ChevronRight className="w-4 h-4"/>
+                        </a>
+                    </nav>
                 </div>
             </main>
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">

@@ -63,7 +63,7 @@ const data = {
         },
         {
             title: "Experience",
-            url: "#experience",
+            url: "/experience",
             icon: Briefcase,
             number: 3,
         },
@@ -75,13 +75,13 @@ const data = {
         },
         {
             title: "Resume",
-            url: "resume",
+            url: "/resume",
             icon: FileUser,
             number: 5,
         },
         {
             title: "Contact Me",
-            url: "#contact",
+            url: "/contact",
             icon: Contact,
             number: 6,
         },
@@ -122,6 +122,9 @@ export function AppSidebar(props) {
     // Function to handle keyboard navigation
     const handleKeyDown = useCallback((event) => {
         const key = event.key
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            return
+        }
         if (key >= '1' && key <= '6') {
             const index = parseInt(key) - 1
             if (index < data.navMain.length) {

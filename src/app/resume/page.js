@@ -13,6 +13,7 @@ import {
     BreadcrumbList, BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
+import {ChevronLeft, ChevronRight} from "lucide-react";
 
 export default function ResumePage() {
     const {
@@ -64,6 +65,26 @@ export default function ResumePage() {
             <main className="relative z-10 flex-1 overflow-y-auto">
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
                     <Resume/>
+                </div>
+                <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
+                    <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
+                        <a href="/about"
+                           className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+                            <ChevronLeft className="w-4 h-4"/>
+                            <div>
+                                <div className="text-sm font-medium">Previous Page</div>
+                                <div className="text-xl dark:text-white text-black">Projects</div>
+                            </div>
+                        </a>
+                        <a href="/Projects"
+                           className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
+                            <div>
+                                <div className="text-sm font-medium">Next Page</div>
+                                <div className="text-xl dark:text-white text-black">Contact Me</div>
+                            </div>
+                            <ChevronRight className="w-4 h-4"/>
+                        </a>
+                    </nav>
                 </div>
             </main>
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">

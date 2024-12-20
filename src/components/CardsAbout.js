@@ -151,7 +151,7 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"}) => {
                     <CardTitle
                         className="text-xl font-semibold text-gray-900 dark:text-neutral-200  select-none">{title}</CardTitle>
                     <CardDescription
-                        className="text-md text-gray-500 dark:text-neutral-400  select-none">{description}</CardDescription>
+                        className="text-md text-gray-500 dark:text-neutral-400 select-none">{description}</CardDescription>
                 </CardHeader>
                 {type === "programming" ? (
                     <CardContent>

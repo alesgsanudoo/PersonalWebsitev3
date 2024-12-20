@@ -1,9 +1,10 @@
 import {Inter} from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/themes-provider"
+import {ThemeProvider} from "@/components/themes-provider"
 import {AppSidebar} from "@/components/AppSidebar";
 import {SidebarInset, SidebarProvider} from "@/components/ui/sidebar";
 import {cookies} from "next/headers";
+import {Toaster} from "@/components/ui/toaster";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -29,7 +30,7 @@ export default async function RootLayout({children}) {
 
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -39,7 +40,7 @@ export default async function RootLayout({children}) {
             <SidebarProvider defaultOpen={defaultOpen}>
                 <AppSidebar/>
                 <SidebarInset>
-                    {children}
+                    {children}<Toaster />
                 </SidebarInset>
             </SidebarProvider>
         </ThemeProvider>
